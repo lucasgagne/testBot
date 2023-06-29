@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Split View with NavBar</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div class="nav-bar">
+    <!-- Navbar content goes here -->
+  </div>
+  <div class="container">
+    <div class="left-view">
+      <!-- Left view content goes here -->
+    </div>
+    <div class="right-view">
+      <!-- Right view content goes here -->
+      <p id="resultText">Results</p>
+      
+      <div class="bottom-view">
+        
+        <!-- Bottom view content goes here -->
+        <!-- speech to text below-->
+        
+        <h1>Speech to Text</h1>
+        <button id="startButton">Start Recording</button>
+        <button id="stopButton">Stop Recording</button>
+      
+        <div id="transcribedText"></div>
+      
+        <!-- message to gpt below-->
+        <input type="text" id="inputField" value="Enter your message">
+        <button onclick="processInput()">Connect to Python</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

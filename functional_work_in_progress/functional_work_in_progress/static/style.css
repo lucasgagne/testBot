@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-view {
+    flex: 1;
+    width: 25%;
+    background-color: lightgray;
+  }
+  
+  .right-view {
+    flex: 3;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Add this property */
+  }
+  
+  .bottom-view {
+    height: 150px;
+    background-color: lightblue;
+    /* order: 2; Added order property to display at the bottom */
+  }
+  
+  .nav-bar {
+    height: 50px;
+    background-color: gray;
+  }
