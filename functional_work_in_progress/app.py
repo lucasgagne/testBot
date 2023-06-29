@@ -16,14 +16,15 @@ def result():
 def hello():
     user_input = request.args.get('input')
     # return 'Hello, world! ' + user_input
-    return LT.get_response(user_input)[0]
+    # return LT.get_response(user_input)[0]
+    return LT.get_response(user_input)
 
 # @app.route('/gpt')
 # def hello(message):
 #     return 'Hello, world!'
     
 if __name__ == "__main__":
-    LT = LangTutor("spanish", "english", "a fisherman lost his alfredo in italy")
+    LT = LangTutor("english", "english", "a helpful servant")
     app.run(debug = True, port = 8001)
     
 
