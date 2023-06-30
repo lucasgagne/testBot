@@ -2,7 +2,7 @@ import openai
 # A class which allows you to study foreign language in a fun
 # and interactive way
 class LangTutor:
-  KEY = "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"
+  KEY = "MY KEY"
   MODEL = "gpt-4"
   #Inputs:
   #   f_lang: The language to study as a string
@@ -48,8 +48,8 @@ class LangTutor:
       # return (response, correction, translation)
       return (response)
     
-LT = LangTutor("english", "english", "a helpful servant")
-stringy = LT.get_response("whatsup man. as a test can you say 'I am an elephant' ? ")
+LT = LangTutor("spanish", "english", "a helpful servant")
+stringy = LT.get_response("hi who are you ")
 print(stringy)
 # message = stringy[0]
 # print(message)

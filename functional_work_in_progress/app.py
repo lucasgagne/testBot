@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from LangTutor import LangTutor
 app = Flask(__name__)
 
-@app.route("/")
+
 @app.route("/home")
 def home():
     return render_template("index.html")
@@ -11,6 +11,11 @@ def home():
 def result():
     output = request.form.to_dict()
     name = output["name"]
+
+@app.route("/")
+@app.route('/homepage')
+def homepage():
+    return render_template('homepage.html')
     
 @app.route('/hello')
 def hello():
@@ -24,7 +29,7 @@ def hello():
 #     return 'Hello, world!'
     
 if __name__ == "__main__":
-    LT = LangTutor("english", "english", "a helpful servant")
+    LT = LangTutor("spanish", "english", "a waiter who wants to know what I want to eat")
     app.run(debug = True, port = 8001)
     
 

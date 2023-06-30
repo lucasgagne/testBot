@@ -8,6 +8,8 @@
 <body>
   <div class="nav-bar">
     <!-- Navbar content goes here -->
+    <a href="{{ url_for('homepage') }}">Home</a>
+    
   </div>
   <div class="container">
     <div class="left-view">
@@ -22,15 +24,15 @@
         <!-- Bottom view content goes here -->
         <!-- speech to text below-->
         
-        <h1>Speech to Text</h1>
+        <h3>Speech recorder below, press start and stop to record message:</h3>
         <button id="startButton">Start Recording</button>
         <button id="stopButton">Stop Recording</button>
       
         <div id="transcribedText"></div>
-      
+        <h3>When you see your message, press "Send Message" and wait for repsponse</h3>
         <!-- message to gpt below-->
-        <input type="text" id="inputField" value="Enter your message">
-        <button onclick="processInput()">Connect to Python</button>
+        <input type="text" id="inputField" value="(Optional) Type Message Manually">
+        <button onclick="processInput()">Send Message</button>
       </div>
     </div>
   </div>

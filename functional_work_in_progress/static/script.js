@@ -1,23 +1,51 @@
+//Page navigation
+// Function to handle the homepage link click event
+// Wait for the HTML document to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all the navigation links
+  const navLinks = document.querySelectorAll('nav ul li a');
 
+  // Attach click event listeners to each navigation link
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      // Prevent the default link behavior
+      event.preventDefault();
+
+      // Get the target URL from the clicked link's href attribute
+      const targetUrl = this.getAttribute('href');
+
+      // Redirect to the target URL
+      window.location.href = targetUrl;
+    });
+  });
+
+
+
+});
+
+//Calling python GPT API below
 function processInput() {
-    var userInput = document.getElementById('transcribedText').textContent;
-  // var userInput = "lucas gagne";
-  
-    // Append the userInput as a query parameter to the URL
-    var url = '/hello?input=' + encodeURIComponent(userInput);
-    fetch(url)
-      .then(response => response.text())
-      .then(result => {
-        console.log('Result:', result);
-        // Handle the result from the Flask endpoint
-        // ...
-        document.getElementById('resultText').textContent = result;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        // Handle any errors that occur during the request
-      });
-  }
+  var userInput = document.getElementById('transcribedText').textContent;
+
+  // Append the userInput as a query parameter to the URL
+  var url = '/hello?input=' + encodeURIComponent(userInput);
+  fetch(url)
+    .then(response => response.text())
+    .then(result => {
+      console.log('Result:', result);
+      // Handle the result from the Flask endpoint
+      // ...
+      document.getElementById('resultText').textContent = result;
+      var cleanedText =  result.replace(/[^\w\s]/gi, '');
+      // Convert result text to speech and play
+      var utterance = new SpeechSynthesisUtterance(cleanedText);
+      speechSynthesis.speak(utterance);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle any errors that occur during the request
+    });
+}
   //Speech to text below
   document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startButton');
@@ -28,7 +56,9 @@ function processInput() {
 
     startButton.addEventListener('click', () => {
         recognition = new webkitSpeechRecognition(); // Use vendor prefix for Chrome
-        recognition.lang = 'en-US'; // Set the language
+        // recognition.lang = 'en-US'; // Set the language
+        recognition.lang = 'es-ES'; // Set the language
+
         recognition.continuous = true; // Enable continuous mode
 
         recognition.onstart = () => {

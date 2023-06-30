@@ -23,7 +23,7 @@ body {
   }
   
   .bottom-view {
-    height: 150px;
+    height: 250px;
     background-color: lightblue;
     /* order: 2; Added order property to display at the bottom */
   }
@@ -31,4 +31,9 @@ body {
   .nav-bar {
     height: 50px;
     background-color: gray;
+  }
+
+  .nav-bar a {
+    color: #fff;
+    text-decoration: none;
   }
