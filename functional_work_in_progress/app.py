@@ -9,6 +9,8 @@ LT = LangTutor("spanish", "english", "a waiter who wants to know what I want to 
 #     global LT
 #     LT = LangTutor("English", "english", "a helpful musician")
 #     return "LangTutor set successfully"
+
+#I have not updated all of the prompts for LangTutor, I was testing different prompts and languages.. They can be changed very easily.
 @app.route("/set_lang_tutor_res")
 def set_lang_tutor_res():
     global LT
