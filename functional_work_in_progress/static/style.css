@@ -1,39 +1,76 @@
-body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .left-view {
-    flex: 1;
-    width: 25%;
-    background-color: lightgray;
-  }
-  
-  .right-view {
-    flex: 3;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Add this property */
-  }
-  
-  .bottom-view {
-    height: 250px;
-    background-color: lightblue;
-    /* order: 2; Added order property to display at the bottom */
-  }
-  
-  .nav-bar {
-    height: 50px;
-    background-color: gray;
-  }
 
-  .nav-bar a {
-    color: #fff;
-    text-decoration: none;
-  }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-view {
+  flex: 1;
+  width: 25%;
+  background-color: lightgray;
+}
+
+.right-view {
+  flex: 3;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Add this property */
+}
+
+.bottom-view {
+  height: 250px;
+  background-color: lightblue;
+  /* order: 2; Added order property to display at the bottom */
+}
+
+.nav-bar {
+  text-align: right;
+  height: 50px;
+  background-color: gray;
+
+}
+
+.nav-bar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+  height: 400px;
+}
+
+.content2 {
+  text-align: center;
+  background-color: lightblue;
+  height: 400px;
+  padding: 20px;
+}
+.content2 a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  background-color: darkgrey;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 50px
+}
+p {
+  white-space: pre-line;
+}
+
+  /* NEW SHIT BELOW */

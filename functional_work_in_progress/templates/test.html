@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Services</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='savecss.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  
+
+</head>
+<body>
+  <!-- <header>
+    <h1>Our Services</h1>
+    
+  </header> -->
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">GPT page</a></li>
+      <li><a href="{{ url_for('homepage') }}">home</a></li>
+      
+    </ul>
+  </nav>
+
+ 
+
+  <main>
+    <div class="container">
+      <div class="left-panel">
+
+        <div>
+            <button class="big-button">Select A Theme Below</button>
+            <!-- <button onclick="showOverlay()" class="big-button">Custom</button> -->
+            <!-- I am putting the overlay below -->
+            <div id="overlay" class="overlay">
+              <div class="overlay-content">
+                <h2>Custom Scenario</h2>
+                <p>Enter a custom scenario to simulate in your desired language.</p>
+                <input type="text" id = "textInput" placeholder="Enter your text">
+                <button onclick="processInput()">Submit</button>
+                <button onclick="hideOverlay()">Close</button>
+              </div>
+            </div>
+
+        </div>
+        <div class="spacer"></div>
+
+        <div class = scrollable>
+
+            
+            
+        <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); setLangTutorRes()" class="rectangle-button"> 
+          <h2>Restaurant</h2>
+            <p>Make an order with your server.</p>
+        </button>
+
+        <!-- <button onClick="changeImage()">MYBTN</button> -->
+        
+            <div class="spacer"></div>
+    
+            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorDog()" class="rectangle-button">
+                <h2>Dog Park</h2>
+            <p>Take your pet for a stroll at the park.</p>
+            </button>
+    
+            <div class="spacer"></div>
+            
+            <button onclick="changeImage('{{ url_for('static', filename='images/grocerystore.jpeg') }}'); setLangTutorStore()" class="rectangle-button">
+                <h2>Grocery store</h2>
+            <p>Reload your groceries for the week.</p>
+            </button>
+    
+            <div class="spacer"></div>
+    
+            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort()" class="rectangle-button">
+                <h2>Airport</h2>
+            <p>You've just arrived to a new country.</p>
+            </button>
+    
+            <div class="spacer"></div>
+           
+    
+            <div class="spacer"></div>
+            
+    
+            <div class="spacer"></div>
+
+
+        </div>
+        
+
+      </div>
+      
+      
+
+      <div class="right-panel">
+        <div class = "top-view"> 
+            <h2>Top View</h2>
+            <img src="{{ url_for('static', filename='images/cali.jpeg') }}" class = "responsive" id = "image" width="300" height="200">
+            <!-- <button onclick="changeImage()">MY BTN</button> -->
+            <p>Our front-end developers specialize in crafting interactive and responsive web interfaces.</p>
+            <h3>Speech recorder below, press start and stop to record message:</h3>
+            <button id="startButton">Start Recording</button>
+            <button id="stopButton">Stop Recording</button>
+            <button onclick="processInput()">Send Message</button>
+        
+        </div>
+
+        <div class ="spacer"> </div>
+
+         <!-- live transcript -->    
+        <div class="transcript-container">
+          <div class="transcript-bar">
+            <div class = "transcript-rectangle">
+            <h2>Transcript 1</h2>
+            <p>Transcript content goes here...</p>
+            <p id="resultText">Results</p>
+            </div>
+          </div>
+
+          <!-- corrected transcript -->
+          <div class="transcript-bar">
+            <div class = "transcript-rectangle">
+            <h2>Transcript 2</h2>
+            <p>Transcript content goes here...</p>
+            <div id="transcribedText"></div>
+            <div id="result"></div>
+          </div>
+          </div>
+        </div>
+        
+
+      </div>
+      
+    </div>
+
+    <!-- <section>
+      <h2>Responsive Design</h2>
+      <p>We ensure that your website looks great and functions properly across various devices and screen sizes.</p>
+    </section> -->
+  </main>
+
+  <footer>
+    <p>&copy; 2023. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -35,7 +35,7 @@ function processInput() {
       console.log('Result:', result);
       // Handle the result from the Flask endpoint
       // ...
-      document.getElementById('resultText').textContent = result;
+      document.getElementById('resultText').textContent += '\n' +result + '\n';
       var cleanedText =  result.replace(/[^\w\s]/gi, '');
       // Convert result text to speech and play
       var utterance = new SpeechSynthesisUtterance(cleanedText);
@@ -90,4 +90,73 @@ function processInput() {
         }
     });
 });
+
+ //Change image func below
+ function changeImage(imageSource) {
+  // setLangTutor()
+  console.log("GOt here 1");
   
+  var img = document.getElementById('image');
+  img.src = imageSource;
+}
+
+
+var imageSources = [
+  "{{ url_for('static', filename='images/dogpark.jpeg') }}"
+];
+function randomImage() {
+  var img = document.getElementById('image');
+  var randomIndex = Math.floor(Math.random() * imageSources.length);
+  var randomImageSource = imageSources[randomIndex];
+  changeImage(randomImageSource)
+}
+
+// Change theme function below for resurant
+function setLangTutorRes() {
+  console.log("GOt here2");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/set_lang_tutor_res", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send();
+}
+// Change theme function below for dog park
+function setLangTutorDog() {
+  console.log("GOt here2");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/set_lang_tutor_dog", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send();
+}
+// Change theme function below for grocery store
+function setLangTutorStore() {
+  console.log("GOt here2");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/set_lang_tutor_store", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send();
+}
+
+// Change theme function below for airport
+function setLangTutorPort() {
+  console.log("GOt here2");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/set_lang_tutor_port", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send();
+}
