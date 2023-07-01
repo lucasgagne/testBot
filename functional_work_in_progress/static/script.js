@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function processInput() {
   var userInput = document.getElementById('transcribedText').textContent;
 
+
   // Append the userInput as a query parameter to the URL
   var url = '/hello?input=' + encodeURIComponent(userInput);
   fetch(url)
@@ -36,6 +37,7 @@ function processInput() {
       // Handle the result from the Flask endpoint
       // ...
       document.getElementById('resultText').textContent += '\n' +result + '\n';
+      document.getElementById('userChatLog').textContent += '\n' +userInput + '\n';
       var cleanedText =  result.replace(/[^\w\s]/gi, '');
       // Convert result text to speech and play
       var utterance = new SpeechSynthesisUtterance(cleanedText);
@@ -93,7 +95,6 @@ function processInput() {
 
  //Change image func below
  function changeImage(imageSource) {
-  // setLangTutor()
   console.log("GOt here 1");
   
   var img = document.getElementById('image');
@@ -112,10 +113,16 @@ function randomImage() {
 }
 
 // Change theme function below for resurant
-function setLangTutorRes() {
+function setLangTutorRes(lang) {
   console.log("GOt here2");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/set_lang_tutor_res", true);
+  if (lang == "eng") {
+    
+    xhr.open("GET", "/set_lang_tutor_res_eng", true);
+  } else {
+    xhr.open("GET", "/set_lang_tutor_res", true);
+  }
+  
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);
@@ -124,10 +131,15 @@ function setLangTutorRes() {
   xhr.send();
 }
 // Change theme function below for dog park
-function setLangTutorDog() {
+function setLangTutorDog(lang) {
   console.log("GOt here2");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/set_lang_tutor_dog", true);
+  if (lang == "eng") {
+    xhr.open("GET", "/set_lang_tutor_dog_eng", true);
+  } else {
+    xhr.open("GET", "/set_lang_tutor_dog", true);
+  }
+  
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);
@@ -136,10 +148,15 @@ function setLangTutorDog() {
   xhr.send();
 }
 // Change theme function below for grocery store
-function setLangTutorStore() {
+function setLangTutorStore(lang) {
   console.log("GOt here2");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/set_lang_tutor_store", true);
+  if (lang == "eng") {
+    xhr.open("GET", "/set_lang_tutor_store_eng", true);
+  } else {
+    xhr.open("GET", "/set_lang_tutor_store", true);
+  }
+  
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);
@@ -149,10 +166,15 @@ function setLangTutorStore() {
 }
 
 // Change theme function below for airport
-function setLangTutorPort() {
+function setLangTutorPort(lang) {
   console.log("GOt here2");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/set_lang_tutor_port", true);
+  if (lang == "eng") {
+    xhr.open("GET", "/set_lang_tutor_port_eng", true);
+  } else {
+    xhr.open("GET", "/set_lang_tutor_port", true);
+  }
+  
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       console.log(xhr.responseText);

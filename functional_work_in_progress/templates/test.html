@@ -15,7 +15,6 @@
   </header> -->
   <nav>
     <ul>
-      <li><a href="{{ url_for('home') }}">GPT page</a></li>
       <li><a href="{{ url_for('homepage') }}">home</a></li>
       
     </ul>
@@ -48,7 +47,7 @@
 
             
             
-        <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); setLangTutorRes()" class="rectangle-button"> 
+        <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); setLangTutorRes('spn')" class="rectangle-button"> 
           <h2>Restaurant</h2>
             <p>Make an order with your server.</p>
         </button>
@@ -57,32 +56,46 @@
         
             <div class="spacer"></div>
     
-            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorDog()" class="rectangle-button">
+            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorDog('spn')" class="rectangle-button">
                 <h2>Dog Park</h2>
             <p>Take your pet for a stroll at the park.</p>
             </button>
     
             <div class="spacer"></div>
             
-            <button onclick="changeImage('{{ url_for('static', filename='images/grocerystore.jpeg') }}'); setLangTutorStore()" class="rectangle-button">
+            <button onclick="changeImage('{{ url_for('static', filename='images/grocerystore.jpeg') }}'); setLangTutorStore('spn')" class="rectangle-button">
                 <h2>Grocery store</h2>
             <p>Reload your groceries for the week.</p>
             </button>
     
             <div class="spacer"></div>
     
-            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort()" class="rectangle-button">
+            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort('spn')" class="rectangle-button">
                 <h2>Airport</h2>
             <p>You've just arrived to a new country.</p>
             </button>
     
             <div class="spacer"></div>
+            <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); setLangTutorRes('eng')" class="rectangle-button">
+              <h2>Restaurant (English)</h2>
+          <p>You've just arrived to a new country.</p>
+          </button>
            
     
             <div class="spacer"></div>
+
+            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorPort('eng')" class="rectangle-button">
+              <h2>Dog Park (English)</h2>
+          <p>You've just arrived to a new country.</p>
+          </button>
             
     
             <div class="spacer"></div>
+
+            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort('eng')" class="rectangle-button">
+              <h2>Airport (English)</h2>
+          <p>You've just arrived to a new country.</p>
+          </button>
 
 
         </div>
@@ -97,7 +110,6 @@
             <h2>Top View</h2>
             <img src="{{ url_for('static', filename='images/cali.jpeg') }}" class = "responsive" id = "image" width="300" height="200">
             <!-- <button onclick="changeImage()">MY BTN</button> -->
-            <p>Our front-end developers specialize in crafting interactive and responsive web interfaces.</p>
             <h3>Speech recorder below, press start and stop to record message:</h3>
             <button id="startButton">Start Recording</button>
             <button id="stopButton">Stop Recording</button>
@@ -111,19 +123,18 @@
         <div class="transcript-container">
           <div class="transcript-bar">
             <div class = "transcript-rectangle">
-            <h2>Transcript 1</h2>
-            <p>Transcript content goes here...</p>
-            <p id="resultText">Results</p>
+            <h2>Chat Log (Bot)</h2>
+            <p id="resultText">Scroll if page fills up:</p>
             </div>
           </div>
 
           <!-- corrected transcript -->
           <div class="transcript-bar">
             <div class = "transcript-rectangle">
-            <h2>Transcript 2</h2>
-            <p>Transcript content goes here...</p>
+            <h2>Chat Log (User)</h2>
+            <p>Scroll if page fills up: </p>
             <div id="transcribedText"></div>
-            <div id="result"></div>
+            <p id="userChatLog"></p>
           </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import openai
 # A class which allows you to study foreign language in a fun
 # and interactive way
 class LangTutor:
-  KEY = "MYKEY"
+  KEY = "MY KEY"
   MODEL = "gpt-4"
   #Inputs:
   #   f_lang: The language to study as a string
