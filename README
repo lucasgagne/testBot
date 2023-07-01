@@ -2,3 +2,5 @@ This is just a demo, it is a current work in progress, however it is fully funct
 and text-to-voice allowing users to speak to GPT and hear its responses. It has different themes to chose from including spanish Themes to 
 practice your spanish. My API key will get banned if I post it so the current files will not work without a GPT-API key, but all other code is 
 functional. 
+
+This project is created with Python Flask, it has HTML, CSS, JS, and Python in the backend. 
