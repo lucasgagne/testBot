@@ -1,3 +1,3 @@
-This is just a demo and not the most up to date version. I frequently change themes an UI, this is just saving the functionality of the project
+This is just a demo and not the most up to date version. I frequently change themes and UI, this is just saving the functionality of the project
 in this version I have voice to text, text to voice, GPT API is linked from backend to frontend, and you can click on different themes which will 
 send a request to the backend and update the prompt for the GPT API
