@@ -23,6 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
+//Keep track of whether we are in english or spanish mode with even listener:
+let spanishMode = true;
+
+function toggleBoolean() {
+  spanishMode = !spanishMode;
+
+  // Do something with the boolean
+  if (spanishMode) {
+    console.log('spanish is on');
+  } else {
+    console.log('spanish is off');
+  }
+}
+
 //Calling python GPT API below
 function processInput() {
   var userInput = document.getElementById('transcribedText').textContent;
@@ -59,7 +74,12 @@ function processInput() {
     startButton.addEventListener('click', () => {
         recognition = new webkitSpeechRecognition(); // Use vendor prefix for Chrome
         // recognition.lang = 'en-US'; // Set the language
-        recognition.lang = 'es-ES'; // Set the language
+        if (spanishMode != true) {
+          recognition.lang = 'en-US';
+        }
+        else {
+          recognition.lang = 'es-ES'; // Set the language
+        }
 
         recognition.continuous = true; // Enable continuous mode
 

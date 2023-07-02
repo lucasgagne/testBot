@@ -76,24 +76,24 @@
             </button>
     
             <div class="spacer"></div>
-            <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); setLangTutorRes('eng')" class="rectangle-button">
-              <h2>Restaurant (English)</h2>
+            <button onclick="changeImage('{{ url_for('static', filename='images/restaurant.jpeg') }}'); toggleBoolean(); setLangTutorRes('eng')" class="rectangle-button">
+              <h2>Restaurant (Eng)</h2>
           <p>You've just arrived to a new country.</p>
           </button>
            
     
             <div class="spacer"></div>
 
-            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorPort('eng')" class="rectangle-button">
-              <h2>Dog Park (English)</h2>
+            <button onclick="changeImage('{{ url_for('static', filename='images/dogpark.jpeg') }}'); setLangTutorPort('eng'); toggleBoolean()" class="rectangle-button">
+              <h2>Dog Park (Eng)</h2>
           <p>You've just arrived to a new country.</p>
           </button>
             
     
             <div class="spacer"></div>
 
-            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort('eng')" class="rectangle-button">
-              <h2>Airport (English)</h2>
+            <button onclick="changeImage('{{ url_for('static', filename='images/airport.jpeg') }}'); setLangTutorPort('eng'); toggleBoolean()" class="rectangle-button">
+              <h2>Airport (Eng)</h2>
           <p>You've just arrived to a new country.</p>
           </button>
 
